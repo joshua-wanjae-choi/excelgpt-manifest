@@ -1,0 +1,2 @@
+# excelgpt-manifest
+excelgpt-manifest
