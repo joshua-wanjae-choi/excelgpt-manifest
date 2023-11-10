@@ -1,0 +1,6 @@
+[submodule "excelgpt-frontend"]
+	path = excelgpt-frontend
+	url = git@github.com:joshua-wanjae-choi/excelgpt-frontend.git
+[submodule "excelgpt-backend"]
+	path = excelgpt-backend
+	url = git@github.com:joshua-wanjae-choi/excelgpt-backend.git
