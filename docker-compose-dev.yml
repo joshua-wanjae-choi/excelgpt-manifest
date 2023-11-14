@@ -13,6 +13,12 @@ services:
     # TMP ENB
     secrets:
       - api-secret
+    environment:
+      - LIMIT_QUERY_COUNT=100
+      - DAYS_EXPIRED_FILES=1
+      - DISK_DIR_NAME=disk
+    depends_on:
+      - db
     networks:
       - excelgpt-net
   web:

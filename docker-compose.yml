@@ -7,6 +7,12 @@ services:
     restart: always
     secrets:
       - api-secret
+    environment:
+      - LIMIT_QUERY_COUNT=100
+      - DAYS_EXPIRED_FILES=1
+      - DISK_DIR_NAME=disk
+    depends_on:
+      - db
     networks:
       - excelgpt-net
   web:
@@ -30,6 +36,7 @@ services:
   nginx:
     image: nginx:1.25.3-alpine
     container_name: excelgpt-nginx
+    restart: always
     ports:
       - 80:80
       - 443:443
