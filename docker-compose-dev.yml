@@ -5,6 +5,12 @@ services:
     build: ./excelgpt-backend
     container_name: excelgpt-backend
     restart: always
+    # TMP START
+    ports:
+      - 8000:8000
+    volumes:
+      - ./excelgpt-backend:/home/excelgpt/app
+    # TMP ENB
     secrets:
       - api-secret
     networks:
@@ -13,14 +19,24 @@ services:
     build: ./excelgpt-frontend
     container_name: excelgpt-frontend
     restart: always
+    ports:
+      - 3000:3000
     networks:
       - excelgpt-net
+    # TMP START
+    volumes:
+      - ./excelgpt-frontend:/home/excelgpt/app
+    # TMP END
   db:
     image: mariadb:11.1.2
     container_name: excelgpt-db
     restart: always
     secrets:
       - mariadb-root
+    # TMP start
+    ports:
+     - 3306:3306
+    # TMP end
     volumes:
       - ./mariadb:/var/lib/mysql:Z
     environment:
