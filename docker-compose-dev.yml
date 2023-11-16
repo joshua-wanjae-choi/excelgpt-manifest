@@ -10,8 +10,9 @@ services:
       - 8000:8000
     volumes:
       - ./excelgpt-backend:/home/excelgpt/app
-      - backend-app:/home/excelgpt/app
-      - backend-disk:/home/excelgpt/disk
+      - backend-disk:/home/excelgpt/app/disk
+      # >secret.py가 복사되지 않는 경우, host에서 추가
+      # >경로: /home/excelgpt/app/api/secret.py
     # TMP ENB
     secrets:
       - api-secret
