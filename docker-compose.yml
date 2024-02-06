@@ -46,7 +46,7 @@ services:
     networks:
       - excelgpt-net
     volumes:
-      - /var/www/letsencrypt:/var/www/letsencryp
+      - /var/www/letsencrypt:/var/www/letsencrypt
       - /etc/letsencrypt/live/excelgpt.click/fullchain.pem:/etc/ssl/live/fullchain1.pem
       - /etc/letsencrypt/live/excelgpt.click/privkey.pem:/etc/ssl/live/privkey1.pem
 
